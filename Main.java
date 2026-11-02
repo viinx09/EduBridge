@@ -98,3 +98,65 @@ public class Main {
         c.display();
     }
 }
+
+------------------------------------------------------------------------------------------------------------------------------------
+    #Persion_Inhereantce
+    class Person {
+    String name;
+    int age;
+    Person(String name, int age) {
+        System.out.println("Person Constructor Called");
+        this.name = name;
+        this.age = age;
+    }
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+class Employee extends Person {
+    int employeeId;
+    double basicSalary;
+
+    Employee(String name, int age, int employeeId, double basicSalary) {
+        super(name, age);
+        System.out.println("Employee Constructor Called");
+        this.employeeId = employeeId;
+        this.basicSalary = basicSalary;
+    }
+    @Override
+    void display() {
+        super.display();
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Basic Salary: " + basicSalary);
+    }
+}
+class Manager extends Employee {
+    String department;
+    double bonus;
+    Manager(String name, int age, int employeeId, double basicSalary, String department, double bonus) {
+        super(name, age, employeeId, basicSalary);
+        System.out.println("Manager Constructor Called");
+        this.department = department;
+        this.bonus = bonus;
+    }
+    double calculateTotalSalary() {
+        return basicSalary + bonus;
+    }
+    @Override
+    void display() {
+        super.display();
+        System.out.println("Department: " + department);
+        System.out.println("Bonus: " + bonus);
+        System.out.println("Total Salary: " +
+                calculateTotalSalary());
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Manager m = new Manager("Viond", 35, 101, 50000, "IT", 10000);
+        System.out.println("\n--- Manager Details ---");
+        m.display();
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
