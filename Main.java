@@ -100,8 +100,8 @@ public class Main {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------
-    #Persion_Inhereantce
-    class Person {
+#Persion_Inhereantce
+class Person {
     String name;
     int age;
     Person(String name, int age) {
