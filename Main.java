@@ -160,3 +160,56 @@ public class Main {
     }
 }
 ---------------------------------------------------------------------------------------------------------------------------------
+#SHAPE AND AREA 
+class Shape {
+    void area() {
+        System.out.println("Area of Shape");
+    }
+}
+class Circle extends Shape {
+    double radius;
+    Circle(double radius) {
+        this.radius = radius;
+    }
+    @Override
+    void area() {
+        double result = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + result);
+    }
+}
+class Rectangle extends Shape {
+    double length, width;
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+    @Override
+    void area() {
+        double result = length * width;
+        System.out.println("Area of Rectangle: " + result);
+    }
+}
+class Triangle extends Shape {
+    double base, height;
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+    @Override
+    void area() {
+        double result = 0.5 * base * height;
+        System.out.println("Area of Triangle: " + result);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Circle(5);
+        shapes[1] = new Rectangle(10, 4);
+        shapes[2] = new Triangle(6, 8);
+        for (int i = 0; i < shapes.length; i++) {
+            shapes[i].area();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------
